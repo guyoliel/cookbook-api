@@ -4,21 +4,38 @@ module.exports = {
     project: 'tsconfig.json',
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint/eslint-plugin'],
+  plugins: [
+    "prettier",
+    "@typescript-eslint"
+  ],
   extends: [
-    'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
   root: true,
   env: {
     node: true,
     jest: true,
+    browser: true,
+    es6: true
   },
-  ignorePatterns: ['.eslintrc.js'],
+  ignorePatterns: [
+    '.eslintrc.js',
+    "node_modules",
+    "build",
+    "dist",
+    "public"
+  ],
   rules: {
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
+    "eqeqeq": "error",
+    "no-console": "warn",
+    "no-undef": "off",
+    "prettier/prettier": "error",
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-unused-vars": "warn"
   },
 };
