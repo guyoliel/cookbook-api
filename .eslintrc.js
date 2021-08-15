@@ -34,8 +34,14 @@ module.exports = {
     "eqeqeq": "error",
     "no-console": "warn",
     "no-undef": "off",
-    "prettier/prettier": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        'endOfLine': 'auto',
+      }
+    ],
     "@typescript-eslint/no-explicit-any": "error",
-    "@typescript-eslint/no-unused-vars": "warn"
+    "@typescript-eslint/no-unused-vars": "warn",
+
   },
 };
