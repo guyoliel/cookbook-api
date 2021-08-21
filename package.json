@@ -27,6 +27,8 @@
     "@nestjs/platform-express": "^8.0.6",
     "@nestjs/swagger": "^5.0.9",
     "husky": "^7.0.1",
+    "nodemon": "^2.0.12",
+    "puppeteer": "^10.2.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^6.6.6",
