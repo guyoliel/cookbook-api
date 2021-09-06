@@ -1,11 +1,12 @@
-enum Unit {
+export enum Unit {
   Cup,
   Spoon,
   Teaspoon,
-  Ounce,
+  Oz,
   Milligram,
-  gram,
-  kilogram,
-  milliliter,
-  liter,
+  Gram,
+  Kilogram,
+  Milliliter,
+  Liter,
+  Slice,
 }
