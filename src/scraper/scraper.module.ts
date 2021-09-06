@@ -1,25 +1,25 @@
 import { Module } from '@nestjs/common';
 import { ScraperController } from './scraper.controller';
 import { TastyUtilsService } from './tastyUtils.service';
-import { ScraperService } from './scraper.service';
 import { TastyScraper } from './scraperStartegies/tastyScraper';
 import { PuppeteerUtils } from './utils/puppeteerUtils';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { Recipe } from 'src/common/entities/recipe';
+import { ScraperService } from './scraper.service';
+
+const tastyScraper = new TastyScraper(
+  new PuppeteerUtils(),
+  new TastyUtilsService(),
+);
 
 @Module({
+  imports: [TypeOrmModule.forFeature([Recipe])],
   controllers: [ScraperController],
   providers: [
+    ScraperService,
     TastyUtilsService,
-    {
-      provide: ScraperService,
-      useFactory: (tastyUtilsService: TastyUtilsService) => {
-        const tastyScraper = new TastyScraper(
-          new PuppeteerUtils(),
-          tastyUtilsService,
-        );
-        return new ScraperService(tastyScraper);
-      },
-      inject: [TastyUtilsService],
-    },
+    { provide: 'Scraper', useValue: tastyScraper },
   ],
+  exports: [TypeOrmModule],
 })
 export class ScraperModule {}

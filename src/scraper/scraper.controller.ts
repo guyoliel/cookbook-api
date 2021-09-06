@@ -1,5 +1,5 @@
 import { Controller, Get, Param } from '@nestjs/common';
-import { Recipe } from '../common/interfaces/recipe';
+import { Recipe } from '../common/entities/recipe';
 import { ScraperService } from './scraper.service';
 @Controller('scraper')
 export class ScraperController {
@@ -11,6 +11,10 @@ export class ScraperController {
 
   @Get(':site')
   async startScraping(@Param('site') site: string): Promise<Recipe> {
-    return await this.scraperService.scrape(site);
+    try {
+      return await this.scraperService.scrape(site);
+    } catch (error) {
+      return error.toString();
+    }
   }
 }

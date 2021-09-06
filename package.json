@@ -26,13 +26,18 @@
     "@nestjs/core": "^8.0.6",
     "@nestjs/platform-express": "^8.0.6",
     "@nestjs/swagger": "^5.0.9",
+    "@nestjs/typeorm": "^8.0.2",
+    "@types/uuid": "^8.3.1",
     "husky": "^7.0.1",
+    "mongodb": "3.6.0",
     "nodemon": "^2.0.12",
     "puppeteer": "^10.2.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^6.6.6",
-    "swagger-ui-express": "^4.1.6"
+    "rxjs": "7",
+    "swagger-ui-express": "^4.1.6",
+    "typeorm": "^0.2.37",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@nestjs/cli": "^7.6.0",
