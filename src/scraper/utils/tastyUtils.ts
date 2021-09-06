@@ -1,6 +1,3 @@
-import { Injectable } from '@nestjs/common';
-
-@Injectable()
 export class TastyUtilsService {
   public parseFractionText(text: string): number {
     switch (text) {

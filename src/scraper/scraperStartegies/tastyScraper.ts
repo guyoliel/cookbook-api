@@ -3,7 +3,7 @@ import { Recipe } from 'src/common/entities/recipe';
 import { Unit } from 'src/common/entities/unit';
 import { Scraper } from '../interfaces/scraper';
 import * as puppeteer from 'puppeteer';
-import { TastyUtilsService } from '../tastyUtils.service';
+import { TastyUtilsService } from '../utils/tastyUtils';
 import { PuppeteerUtils } from '../utils/puppeteerUtils';
 import { v4 as uuid } from 'uuid';
 

@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ScraperController } from './scraper.controller';
-import { TastyUtilsService } from './tastyUtils.service';
+import { TastyUtilsService } from './utils/tastyUtils';
 import { TastyScraper } from './scraperStartegies/tastyScraper';
 import { PuppeteerUtils } from './utils/puppeteerUtils';
 import { TypeOrmModule } from '@nestjs/typeorm';
